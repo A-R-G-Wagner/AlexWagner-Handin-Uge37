@@ -3,13 +3,10 @@
 Filoversigt
 
 Mandag + Tirsdagsopgaver:
-
 movieReadyForDay2
 
 Onsdagsopgaver:
-
 jsOnsdag
 
 Torsdagsopgaver:
-
 jsTorsdag
