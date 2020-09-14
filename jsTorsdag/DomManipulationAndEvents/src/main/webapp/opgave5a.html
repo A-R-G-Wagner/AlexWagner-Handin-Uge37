@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Implement a simple calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #container{
+                width: 226px;
+                height: 274px;
+                border: 3px solid darkblue;
+                margin: auto
+            }
+            .t1, .t4{
+                border: 1px solid black;
+                height: 48px;
+                margin-left: 3px;
+                margin-top: 3px;
+                display: inline-block;
+                text-align: center;
+                line-height: 48px;
+            }
+            .t1{
+                width: 48px;
+            }
+            .t4{
+                width: 219px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 5a</h1>
+
+        <div id="container">
+            <div id="display" class="t4"></div>
+            <div id="buttons">
+                <div class="t1">7</div>
+                <div class="t1">8</div>
+                <div class="t1">9</div>
+                <div class="t1">/</div>
+
+                <div class="t1">4</div>
+                <div class="t1">5</div>
+                <div class="t1">6</div>
+                <div class="t1">*</div>
+
+                <div class="t1">1</div>
+                <div class="t1">2</div>
+                <div class="t1">3</div>
+                <div class="t1">-</div>
+
+                <div class="t1">0</div>
+                <div class="t1">.</div>
+                <div class="t1">+</div>
+                <div id="calculate" class="t1">=</div>
+            </div>
+        </div>
+
+        <script>
+            var newStart = true;
+            var display = "";
+            var equation = [];
+            var equationString = "";
+
+            document.getElementById("buttons").addEventListener("click", function (e) {
+                let target = e.target;
+                let indput = target.textContent;
+
+                if (newStart == true) {
+                    display = "";
+                }
+                if (equationString == "" && (indput == "+" || indput == "-" || indput == "*" || indput == "/")) {
+                    return;
+
+                }
+
+                display += indput;
+                document.getElementById("display").innerHTML = display;
+
+                if (indput == "+" || indput == "-" || indput == "*" || indput == "/") {
+                    equation.push(equationString)
+                    equation.push(indput);
+                    equationString = "";
+                } else {
+                    equationString += indput;
+                }
+                newStart = false;
+
+            });
+
+            document.getElementById("calculate").addEventListener("click", function (e) {
+                if (equationString !== "") {
+                    equation.push(equationString)
+                    equationString = "";
+                }
+                var result;
+                var number;
+
+                for (let i = 0; i < equation.length; i++) {
+                    if (i == 0) {
+                        result = Number(equation[i]);
+                    } else if (equation[i] == "+") {
+                        number = Number(equation[i + 1])
+                        result += number
+                    } else if (equation[i] == "-") {
+                        number = Number(equation[i + 1])
+                        result -= number
+                    } else if (equation[i] == "*") {
+                        number = Number(equation[i + 1])
+                        result *= number
+                    } else if (equation[i] == "/") {
+                        number = Number(equation[i + 1])
+                        result /= number
+                    }
+                }
+
+                display = result;
+                document.getElementById("display").innerHTML = display;
+                newStart = true;
+                equation = [];
+
+
+                event.stopPropagation();
+            });
+
+        </script>
+    </body>
+</html>

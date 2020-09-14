@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Event Bubbling and event arguments</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+            .mydiv {width: 40px; height: 25px;background-color:yellow; margin:1px;}
+        </style>
+    </head>
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 2a</h1>
+        
+        <div class="mydiv" id = "divA">Div A</div>
+        <div class="mydiv" id = "divO">Div O</div>
+        
+    <script>
+   
+    var varDivA = document.getElementById("divA");
+    var varDivO = document.getElementById("divO");
+    
+    varDivA.addEventListener("click",function(){
+        console.log("Hi from divA");
+    })
+    
+    varDivO.addEventListener("click",function(){
+        console.log("Hi from divO");
+    })
+    
+    </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>myDraft</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>draft/codekeeper</div>
+        
+        <script>
+
+            var atStart = true;
+            var clickValue = ""
+            var clickOperator = "0"
+            var btnClick = document.getElementById("buttons");
+
+            btnClick.addEventListener("click", function (e) {
+                var target = e.target
+                clickValue = target.textContent;
+                console.log("You clicked on: " + clickValue);
+                parseToDisplay(clickValue);
+            })
+
+            function parseToDisplay(input) {
+
+                document.getElementById("display").innerHTML = input;
+            }
+
+            function calcError() {
+
+                document.getElementById("display").innerHTML = "INPUT ERROR - RESETTING";
+
+                document.getElementById("display").innerHTML = "";
+
+            }
+
+        </script>
+    </body>
+</html>

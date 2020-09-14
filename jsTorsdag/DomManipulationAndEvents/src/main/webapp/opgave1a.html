@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple DOM manipulation and Event handling</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 1a</h1>
+        
+        <div>Div 1</div>
+        <div>Div 2</div>
+        <div>Div 3</div>
+        
+        <script>
+            
+           var tagDiv = document.getElementsByTagName("div");
+           
+           for (var i = 0; i < tagDiv.length; i++){
+    
+                tagDiv[i].style.backgroundColor = "blue";
+                }
+
+        </script>    
+    </body>
+</html>

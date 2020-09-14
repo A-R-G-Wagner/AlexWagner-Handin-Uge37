@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Opgave 3</div>
+        <ul id = "ul1"></ul>
+        
+        <<script>
+            
+            var url = "https://jsonplaceholder.typicode.com/users"
+            
+            console.log("1")
+            fetch(url)
+            .then(res => res.json())
+            .then(persons => {
+             // Inside this callback, and only here, the response data is available
+             console.log("data",persons);
+            /* data now contains the response, converted to JavaScript
+               Observe the output from the log-output above
+               Now, just build your DOM changes using the data*/  
+               var lis = persons.map((p) => {
+                   line = "<li>"+p.name+"</li>"
+                   return line;
+               })
+               document.getElementById("ul1").innerHTML = lis.join("")
+            })
+        console.log("2");
+            
+        </script>
+    </body>
+</html>

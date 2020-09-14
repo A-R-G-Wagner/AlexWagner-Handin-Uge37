@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DomManipulationAndEvents</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Startside for DomManipulationAndEvents</h1>
+        <br>
+        <p>Simple DOM manipulation and Event handling</p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave1a.html">opgave1a</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave1b.html">opgave1b</a></p>
+        <p>Event Bubbling and event arguments</p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave2a.html">opgave2a</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave2b.html">opgave2b</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave2c.html">opgave2c</a></p>
+        <p>Using map to create list’s (ul’s, tables etc.)</p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave3a.html">opgave3a</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave3b.html">opgave3b</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave3c.html">opgave3c</a></p>
+        <p>Using map and filter to create dynamic table-rows</p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave4a.html">opgave4a</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave4b.html">opgave4b</a></p>
+        <p>Implement a simple calculator </p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave5a.html">opgave5a</a></p>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/opgave5b.html">opgave5b</a></p>
+
+        <br>
+        <button onclick="alertFunction('alert function test')">alert</button>
+    </body>
+
+    <script>
+
+
+        function alertFunction(someTxt) {
+            alert(someTxt);
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+    </script>
+</html>

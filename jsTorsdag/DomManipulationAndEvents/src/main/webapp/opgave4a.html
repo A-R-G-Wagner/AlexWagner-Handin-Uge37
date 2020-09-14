@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Using map and filter to create dynamic table-rows</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 25%;
+            }
+            td, th {
+                border: 1px solid #6e6e6e;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 4a</h1>
+
+        <table id="tabel1"></table>
+
+
+        <script>
+            var cars = [
+                {id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000},
+                {id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900},
+                {id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000},
+                {id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799},
+                {id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799}
+            ];
+
+            var tableHead = "<tr>" +
+                    "<th>id</th>" +
+                    "<th>Year</th>" +
+                    "<th>Make</th>" +
+                    "<th>Model</th>" +
+                    "<th>Price</th>" +
+                    "</tr>"
+
+            var carAttr = cars.map(function(car){
+            var stringObj = "<td>" + car.id + "</td><td>" + car.year + "</td><td>" + car.make + "</td><td>" + car.model + "</td><td>" + car.price + "</td>";
+                    console.log(stringObj);
+                return "<tr>" + stringObj + "</tr>";
+            })
+            console.log(tableHead + carAttr);
+            document.getElementById("tabel1").innerHTML = tableHead + carAttr
+        </script>
+    </body>
+</html>

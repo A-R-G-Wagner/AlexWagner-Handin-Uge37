@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simple DOM manipulation and Event handling</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 1b</h1>
+
+        <div>Div 1</div>
+        <div>Div 2</div>
+        <div>Div 3</div>
+        <br>
+
+        <button type="button" id = button01 >Change color</button>
+
+        <script>
+        var tagDiv = document.getElementsByTagName("div");
+       
+    document.getElementById("button01").addEventListener("click",function(){
+           
+           for (var i = 0; i < tagDiv.length; i++){
+    
+                tagDiv[i].style.backgroundColor = getRandomColor();
+                }
+        })
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+        </script>    
+    </body>
+</html>

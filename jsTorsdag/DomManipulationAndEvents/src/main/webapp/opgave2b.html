@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Event Bubbling and event arguments</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            .mydiv {width: 45px; height: 25px;background-color:yellow; margin:1px;}
+        </style>
+    </head>
+
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 2b</h1>
+
+        <div id="outer">
+            <div class="mydiv" id = "div1">Div 1</div>
+            <div class="mydiv" id = "div2">Div 2</div>
+            <div class="mydiv" id = "div3">Div 3</div>
+            <div class="mydiv" id = "div4">Div 4</div>
+            <div class="mydiv" id = "div5">Div 5</div>
+            <div class="mydiv" id = "div6">Div 6</div>
+            <div class="mydiv" id = "div7">Div 7</div>
+            <div class="mydiv" id = "div8">Div 8</div>
+            <div class="mydiv" id = "div9">Div 9</div>
+            <div class="mydiv" id = "div10">Div 10</div>
+        </div>
+
+
+        <script>
+
+            var outerDiv = document.getElementById("outer");
+
+            outerDiv.addEventListener("click", function (e) {
+                var target = e.target
+                console.log("You clicked on: " + target.id)
+            })
+
+
+        </script>
+
+    </body>
+</html>

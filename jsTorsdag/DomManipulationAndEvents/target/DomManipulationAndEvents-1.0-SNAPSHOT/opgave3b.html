@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Using map to create list’s (ul’s, tables etc.)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><a href="http://localhost:8080/DomManipulationAndEvents/">Startside</a></p>
+        <h1>Opgave 3b</h1>
+
+        <p id ="p1"></p>
+
+        <br>
+
+        <form>
+
+            <input type="text" id="inputName">
+            <button type="button" id="buttonName">Add name</button>   
+
+        </form>
+
+        <script>
+
+
+            var nameArray = ["Lars", "Tina", "Sten", "Mette"];
+
+            function makeList(array) {
+                return "<ul><li>" + array.join("</li><li>") + "</li></ul>"
+            }
+
+            function loadList() {
+                document.getElementById("p1").innerHTML = makeList(nameArray)
+            }
+            loadList();
+
+            var buttonClick = document.getElementById("buttonName");
+
+            buttonClick.addEventListener("click", function () {
+                var txtName = document.getElementById("inputName").value;
+                nameArray.push(txtName);
+                console.log(txtName);
+                loadList();
+            })
+
+        </script>
+    </body>
+</html>
